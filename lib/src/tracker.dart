@@ -1,15 +1,15 @@
-import 'package:stacktrace_impl/stacktrace_impl.dart';
+import 'package:stack_trace/stack_trace.dart';
 
 import 'state_of_mind.dart';
 import 'types.dart';
 
 class Tracker {
-  StackTraceImpl? stackTrace;
+  Trace? stackTrace;
 
   StateOfMind stateOfMind;
   Event transitionedBy;
 
   Tracker(this.stateOfMind, this.transitionedBy) {
-    stackTrace = StackTraceImpl(skipFrames: 1);
+    stackTrace = Trace.current(1);
   }
 }
